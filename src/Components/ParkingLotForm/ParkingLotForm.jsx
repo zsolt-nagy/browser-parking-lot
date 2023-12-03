@@ -51,7 +51,7 @@ export default function ParkingLotForm({ addItem }) {
 
   return (
     <Form data-bs-theme="dark" className="parking-lot-form" onSubmit={handleSubmit}>
-      <FormGroup className="parking-lot-row">
+      <FormGroup className="parking-lot-row col-12 col-md-8 col-xl-6 col-xxl-4 offset-md-2 offset-xl-3 offset-xxl-4">
         <Label for="link-date">
           Date
         </Label>
@@ -64,7 +64,7 @@ export default function ParkingLotForm({ addItem }) {
           required
         />
       </FormGroup>
-      <FormGroup className="parking-lot-row">
+      <FormGroup className="parking-lot-row col-12 col-md-8 col-xl-6 col-xxl-4 offset-md-2 offset-xl-3 offset-xxl-4">
         <Label for="link-url">
           Link
         </Label>
@@ -77,7 +77,7 @@ export default function ParkingLotForm({ addItem }) {
           required
         />
       </FormGroup>
-      <FormGroup className="parking-lot-row">
+      <FormGroup className="parking-lot-row col-12 col-md-8 col-xl-6 col-xxl-4 offset-md-2 offset-xl-3 offset-xxl-4">
         <Label for="link-description">
           Description
         </Label>
@@ -90,12 +90,12 @@ export default function ParkingLotForm({ addItem }) {
           required
         />
       </FormGroup>
-      <FormGroup className="parking-lot-row d-flex flex-wrap">
+      <FormGroup className="parking-lot-row d-flex flex-wrap col-12 col-md-8 col-xl-6 col-xxl-4 offset-md-2 offset-xl-3 offset-xxl-4">
         <div>
           <Input
             name="radio-priority"
             type="radio"
-            value="High"
+            value={PRIORITIES.High}
             id="prio-high"
             checked={priority === PRIORITIES.High}
             onChange={handlePriorityChange}
@@ -109,7 +109,7 @@ export default function ParkingLotForm({ addItem }) {
           <Input
             name="radio-priority"
             type="radio"
-            value="Medium"
+            value={PRIORITIES.Medium}
             id="prio-medium"
             checked={priority === PRIORITIES.Medium}
             onChange={handlePriorityChange}
@@ -123,7 +123,7 @@ export default function ParkingLotForm({ addItem }) {
           <Input
             name="radio-priority"
             type="radio"
-            value="Low"
+            value={PRIORITIES.Low}
             id="prio-low"
             checked={priority === PRIORITIES.Low}
             onChange={handlePriorityChange}
@@ -134,9 +134,11 @@ export default function ParkingLotForm({ addItem }) {
           </Label>  
         </div>              
       </FormGroup>
-      <Button type="submit">
-        Submit
-      </Button>      
+      <FormGroup className="parking-lot-row col-12 col-md-8 col-xl-6 col-xxl-4 offset-md-2 offset-xl-3 offset-xxl-4">
+        <Button type="submit">
+          Submit
+        </Button>   
+      </FormGroup>   
     </Form>
   );
 }
